@@ -37,8 +37,7 @@ void storeValues (char **arr, int n) {
         arr[i] = (char *)malloc(50 * sizeof(char)); // Max 50 characters per word
         if (arr[i] == NULL) {
             printf("Memory allocation failed for word %d!\n", i);
-            i--; 
-            while (getchar() != '\n'); // Clear input buffer
+            exit(1);
         }
         printf("Enter word %d: ", i + 1);
         scanf("%s", arr[i]); // Read string input
